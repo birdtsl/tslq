@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  BarChart3,
   CalendarDays,
   FileText,
   LayoutDashboard,
@@ -13,6 +14,7 @@ import { usePathname } from "next/navigation";
 
 const navItems: { href: string; label: string; icon: LucideIcon }[] = [
   { href: "/", label: "แดชบอร์ด", icon: LayoutDashboard },
+  { href: "/service-stats", label: "สถิติผู้รับบริการ", icon: BarChart3 },
   { href: "/patients", label: "ผู้ป่วย", icon: Users },
   { href: "/appointments", label: "นัดหมาย", icon: CalendarDays },
   { href: "/reports", label: "รายงาน", icon: FileText },
