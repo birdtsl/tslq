@@ -1,0 +1,247 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Light theme (Horizon UI) ── */
+:root {
+  color-scheme: light;
+
+  --background: #f4f7fe;
+  --foreground: #1b2559;
+  --muted: #a3aed0;
+
+  --card-bg: #ffffff;
+  --card-shadow: 0px 18px 40px rgba(112, 144, 176, 0.12);
+  --card-shadow-sm: 0px 4px 18px rgba(112, 144, 176, 0.08);
+
+  --glass-bg: #ffffff;
+  --glass-border: transparent;
+  --glass-shadow: var(--card-shadow);
+  --glass-blur: 0px;
+
+  --sidebar-bg: #ffffff;
+  --sidebar-border: rgba(163, 174, 208, 0.2);
+  --header-bg: #ffffff;
+  --header-glass-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.08) 55%,
+    rgba(255, 255, 255, 0.12) 100%
+  );
+  --header-glass-sheen: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.28) 0%,
+    rgba(255, 255, 255, 0.04) 32%,
+    transparent 100%
+  );
+  --header-glass-border: rgba(255, 255, 255, 0.12);
+  --header-glass-blur: 96px;
+  --header-glass-saturate: 220%;
+  --header-glass-brightness: 1.08;
+  --header-glass-shadow:
+    0 8px 40px rgba(255, 255, 255, 0.18),
+    0 4px 28px rgba(31, 38, 135, 0.05),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.5);
+  --header-input-bg: rgba(255, 255, 255, 0.14);
+  --header-input-border: rgba(255, 255, 255, 0.14);
+
+  --page-gradient: #f4f7fe;
+
+  --nav-active-bg: #4318ff;
+  --nav-active-text: #ffffff;
+  --nav-hover-bg: rgba(67, 24, 255, 0.06);
+
+  --input-bg: #f4f7fe;
+  --input-border: transparent;
+  --divider: rgba(163, 174, 208, 0.25);
+
+  --hero-gradient: linear-gradient(135deg, #422afb 0%, #7551ff 45%, #ad18fe 100%);
+
+  --primary-50: #f4f1ff;
+  --primary-100: #e9e3ff;
+  --primary-200: #d4cbff;
+  --primary-300: #b9a8ff;
+  --primary-400: #7551ff;
+  --primary-500: #4318ff;
+  --primary-600: #3311db;
+  --primary-700: #2a0fb8;
+  --primary-800: #220d96;
+  --primary-900: #1b0b7a;
+}
+
+/* ── Dark theme (Horizon UI) ── */
+.dark {
+  color-scheme: dark;
+
+  --background: #0b1437;
+  --foreground: #ffffff;
+  --muted: #a3aed0;
+
+  --card-bg: #111c44;
+  --card-shadow: 0px 18px 40px rgba(0, 0, 0, 0.35);
+  --card-shadow-sm: 0px 4px 18px rgba(0, 0, 0, 0.25);
+
+  --glass-bg: #111c44;
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-shadow: var(--card-shadow);
+  --glass-blur: 0px;
+
+  --sidebar-bg: #111c44;
+  --sidebar-border: rgba(255, 255, 255, 0.06);
+  --header-bg: #111c44;
+  --header-glass-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.02) 55%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  --header-glass-sheen: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.01) 28%,
+    transparent 100%
+  );
+  --header-glass-border: rgba(255, 255, 255, 0.06);
+  --header-glass-blur: 96px;
+  --header-glass-saturate: 200%;
+  --header-glass-brightness: 1.04;
+  --header-glass-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.18),
+    0 4px 28px rgba(117, 81, 255, 0.08),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.14);
+  --header-input-bg: rgba(255, 255, 255, 0.06);
+  --header-input-border: rgba(255, 255, 255, 0.06);
+
+  --page-gradient: #0b1437;
+
+  --nav-active-bg: #7551ff;
+  --nav-active-text: #ffffff;
+  --nav-hover-bg: rgba(117, 81, 255, 0.12);
+
+  --input-bg: rgba(255, 255, 255, 0.06);
+  --input-border: rgba(255, 255, 255, 0.08);
+  --divider: rgba(255, 255, 255, 0.08);
+
+  --hero-gradient: linear-gradient(135deg, #3311db 0%, #7551ff 50%, #9b59ff 100%);
+
+  --primary-50: #1b0b7a;
+  --primary-100: #220d96;
+  --primary-200: #2a0fb8;
+  --primary-300: #3311db;
+  --primary-400: #4318ff;
+  --primary-500: #7551ff;
+  --primary-600: #9b7dff;
+  --primary-700: #b9a8ff;
+  --primary-800: #d4cbff;
+  --primary-900: #f4f1ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-glass: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  --font-sans: var(--font-sarabun), "TH Sarabun New", "Sarabun", sans-serif;
+
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
+}
+
+body {
+  background: var(--page-gradient);
+  color: var(--foreground);
+  min-height: 100vh;
+}
+
+/* ── Horizon UI utilities ── */
+.glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+}
+
+.glass-sidebar {
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--sidebar-border);
+  box-shadow: 14px 17px 40px 4px rgba(112, 144, 176, 0.08);
+}
+
+.glass-header {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--header-glass-bg);
+  backdrop-filter: blur(var(--header-glass-blur)) saturate(var(--header-glass-saturate))
+    brightness(var(--header-glass-brightness));
+  -webkit-backdrop-filter: blur(var(--header-glass-blur)) saturate(var(--header-glass-saturate))
+    brightness(var(--header-glass-brightness));
+  border: 0.5px solid var(--header-glass-border);
+  border-radius: 9999px;
+  box-shadow: var(--header-glass-shadow);
+}
+
+.glass-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: var(--header-glass-sheen);
+  pointer-events: none;
+}
+
+.glass-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    ellipse 90% 40% at 50% 0%,
+    rgba(255, 255, 255, 0.12) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+.glass-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.glass-header .glass-input {
+  background: var(--header-input-bg);
+  backdrop-filter: blur(40px) saturate(var(--header-glass-saturate))
+    brightness(var(--header-glass-brightness));
+  -webkit-backdrop-filter: blur(40px) saturate(var(--header-glass-saturate))
+    brightness(var(--header-glass-brightness));
+  border: 0.5px solid var(--header-input-border);
+  box-shadow: inset 0 0.5px 0 rgba(255, 255, 255, 0.25);
+}
+
+.glass-footer {
+  background: transparent;
+  border-top: none;
+}
+
+.glass-input {
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 30px;
+}
+
+.horizon-hero {
+  background: var(--hero-gradient);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+}
